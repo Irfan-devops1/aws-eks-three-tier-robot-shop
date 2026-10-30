@@ -426,7 +426,7 @@ After deletion, review separately managed resources such as IAM roles and polici
 - GitHub: [Irfan-devops1](https://github.com/Irfan-devops1)
 ---
 
-## If you find this project useful for learning AWS, Kubernetes, and DevOps practices, feel free to star the repository.
-
-# Note: Deleting an EKS cluster does not necessarily remove every manually created or independently managed AWS resource. Verify your AWS resources and billing dashboard to avoid unexpected charges.
+> ⭐ If you find this project useful for learning AWS, Kubernetes, and DevOps practices, feel free to star the repository.
+>
+> ⚠️ **Note:** Deleting an EKS cluster does not necessarily remove every manually created or independently managed AWS resource. Verify your AWS resources and billing dashboard to avoid unexpected charges.
 
