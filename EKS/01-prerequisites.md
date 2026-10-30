@@ -133,7 +133,7 @@ After creating your EKS cluster, configure kubectl:
 
 ```bash
 aws eks update-kubeconfig \
-  --region ap-south-1 \
+  --region <YOUR_AWS_REGION> \
   --name <YOUR_EKS_CLUSTER_NAME>
 ```
 
