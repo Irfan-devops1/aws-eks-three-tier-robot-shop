@@ -77,8 +77,6 @@ flowchart LR
     end
 ```
 
-*The diagram is a logical overview. Actual traffic paths and AWS resources depend on the selected Service/Ingress configuration and the resources provisioned in your AWS account.*
-
 ### Request flow
 
 1. A user opens the Robot Shop application using its public endpoint.
@@ -102,7 +100,6 @@ flowchart LR
 | Persistent storage | Amazon EBS CSI Driver (when enabled and required) |
 | Application components | Node.js, Java, Python, Go, PHP |
 | Data and messaging | MongoDB, MySQL, Redis, RabbitMQ |
-| Automation examples | GitHub Actions workflow files |
 
 ##  Microservices
 
