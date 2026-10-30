@@ -1,5 +1,5 @@
 ##  Project Overview
-## Three Tier Architecture Deployment on AWS EKS
+## AWS EKS – Three-Tier Robot Shop Microservices
 
 This project demonstrates the deployment of **Stan's Robot Shop**, a sample microservices-based e-commerce application, on **Amazon Elastic Kubernetes Service (Amazon EKS)**.
 
@@ -19,21 +19,17 @@ This sample microservice application has been built using these technologies:
 - RabbitMQ
 - Nginx
 - AngularJS (1.x)
-# AWS EKS – Three-Tier Robot Shop Microservices
+  
+## 📸 Project Deployment Screenshots
 
-<p align="center">
-  <b>Cloud-Native Microservices Deployment on Amazon EKS</b><br/>
-  Kubernetes • Helm • AWS • Docker • IAM • AWS Load Balancing
-</p>
+### 1. AWS EKS Infrastructure
+![EKS Infrastructure](screenshots/eks-infrastructure.jpg)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Cloud-AWS-orange?logo=amazonaws" />
-  <img src="https://img.shields.io/badge/Container-Docker-2496ED?logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Orchestration-Kubernetes-326CE5?logo=kubernetes&logoColor=white" />
-  <img src="https://img.shields.io/badge/Platform-Amazon%20EKS-FF9900?logo=amazoneks&logoColor=white" />
-  <img src="https://img.shields.io/badge/Packaging-Helm-0F1689?logo=helm&logoColor=white" />
-</p>
+### 2. Robot Shop Application Workflow
+![Application Workflow](screenshots/robot-shop-user-workflow.jpg)
 
+### 3. Order Processing and Validation
+![Order Processing](screenshots/robot-shop-order-processing.jpg)
 
 ##  Architecture
 
