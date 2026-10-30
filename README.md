@@ -1,12 +1,11 @@
 ##  Project Overview
+## Three Tier Architecture Deployment on AWS EKS
 
 This project demonstrates the deployment of **Stan's Robot Shop**, a sample microservices-based e-commerce application, on **Amazon Elastic Kubernetes Service (Amazon EKS)**.
 
 The application is containerized with Docker and orchestrated using Kubernetes. Helm is used to package and deploy the application components. AWS integration includes EKS cluster identity and IAM configuration, the AWS Load Balancer Controller, and optional EBS CSI support for persistent storage.
 
 The repository also contains Kubernetes manifests and supporting deployment documentation for experimenting with cloud-native application operations.
-
-> **Project scope:** This is a hands-on DevOps learning and portfolio project. The upstream Robot Shop application is a sample application, not a production-ready commerce platform. Review and harden application security, secrets, availability, storage, and CI/CD before using it in production.
 
 This sample microservice application has been built using these technologies:
 - NodeJS ([Express](http://expressjs.com/))
