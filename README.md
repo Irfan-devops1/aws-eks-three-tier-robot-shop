@@ -22,14 +22,26 @@ This sample microservice application has been built using these technologies:
   
 ## 📸 Project Deployment Screenshots
 
-### 1. AWS EKS Infrastructure
-![EKS Infrastructure](screenshots/eks-infrastructure.jpg)
+### 1. Application Registration
+![App Registration](screenshots/App%20registration%20page.png)
+### 2. Successful Login
+![Login Successful](screenshots/Login%20successfull.png)
+### 3. Shopping Cart
+![Shopping Cart](screenshots/cart.png)
+### 5. Payment
+![Payment Page](screenshots/pay%20page.png)
+### 4. Order Placed
+![Order Placed](screenshots/order%20placed.png)
 
-### 2. Robot Shop Application Workflow
-![Application Workflow](screenshots/robot-shop-user-workflow.jpg)
+### 6. Kubernetes Pods
+![Robot Shop Pods](screenshots/Robot-shop-pods.png)
 
-### 3. Order Processing and Validation
-![Order Processing](screenshots/robot-shop-order-processing.jpg)
+### 7. Kubernetes Nodes
+![Nodes and Pods Running](screenshots/node%20and%20pods%20running.png)
+
+### 8. Kubernetes Services
+![Kubernetes Services](screenshots/svc.png)
+
 
 ##  Architecture
 
