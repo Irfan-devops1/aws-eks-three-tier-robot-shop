@@ -394,30 +394,6 @@ kubectl logs deployment/aws-load-balancer-controller \
 kubectl get events -A --sort-by=.lastTimestamp
 ```
 
-## 🔐 Security and Best Practices
-
-- Never commit AWS access keys, passwords, API tokens, private keys, or populated secret files.
-- Keep `.env` files out of Git unless they contain only safe, non-secret example values.
-- Use GitHub Actions Secrets or a dedicated secrets manager for CI/CD credentials.
-- Follow least-privilege IAM policies and use workload IAM rather than embedding AWS credentials in containers.
-- Pin container images to controlled version tags or immutable digests instead of relying on `latest`.
-- Define CPU and memory requests/limits and review pod security settings.
-- Restrict public access with appropriate security groups, network controls, and TLS.
-- Enable logging, monitoring, backups, and recovery procedures before production use.
-- Protect the GitHub default branch with branch protection rules or a ruleset.
-
-## 💰 AWS Cost Considerations
-
-Amazon EKS and related infrastructure may generate charges even when the application is idle. Potential cost items include:
-
-- EKS cluster control plane
-- EC2 worker nodes
-- EBS volumes and snapshots
-- Application Load Balancers or Network Load Balancers
-- NAT Gateways and data transfer
-- Public IPv4 addresses and other networking resources
-
-Before creating resources, review current AWS pricing for your region. After testing, remove resources that are no longer required and verify that load balancers, NAT Gateways, EBS volumes, Elastic IP addresses, and related resources have been cleaned up.
 
 **Important:** Deleting an EKS cluster does not always mean every separately created AWS resource has been removed. Review the AWS Console and billing dashboard after teardown.
 
@@ -434,27 +410,6 @@ eksctl delete cluster \
 This is a destructive operation. Confirm the cluster name and region first, and back up any data you need.
 
 After deletion, review separately managed resources such as IAM roles and policies, load balancers, NAT Gateways, Elastic IP addresses, EBS volumes, and CloudFormation stacks. Delete only resources that belong to this project and are no longer needed.
-
-## 📸 Project Screenshots
-
-Add screenshots from your actual deployment to a folder such as `docs/images/`, then replace the placeholders below.
-
-Suggested screenshots:
-
-1. Robot Shop application running in the browser.
-2. EKS cluster and worker nodes.
-3. Kubernetes pods in the `robot-shop` namespace.
-4. Helm release status.
-5. Kubernetes Services and Ingress / load balancer endpoint.
-6. AWS Load Balancer Controller running in `kube-system`.
-
-Example:
-
-```markdown
-![Robot Shop application](docs/images/robot-shop-homepage.png)
-![EKS workloads](docs/images/eks-pods.png)
-![Helm release](docs/images/helm-release.png)
-```
 
 ## 📚 Useful References
 
