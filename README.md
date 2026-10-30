@@ -1,4 +1,4 @@
-## 📌 Project Overview
+##  Project Overview
 
 This project demonstrates the deployment of **Stan's Robot Shop**, a sample microservices-based e-commerce application, on **Amazon Elastic Kubernetes Service (Amazon EKS)**.
 
