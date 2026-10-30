@@ -2,11 +2,11 @@
 
 Before deploying the Robot Shop application on Amazon EKS, install the following tools on your Ubuntu machine.
 
-## 3. Prerequisites – Install Required Tools
+## Prerequisites – Install Required Tools
 
 Before deploying applications on Amazon EKS, install the following tools on your Ubuntu machine.
 
-### 3.1 Update Ubuntu and Install Utilities
+### Update Ubuntu and Install Utilities
 
 ```bash
 sudo apt-get update
@@ -16,7 +16,7 @@ sudo apt-get install -y \
   ca-certificates gnupg jq
 ```
 
-### 3.2 Install AWS CLI v2
+### Install AWS CLI v2
 
 AWS CLI is a command-line tool for managing AWS services, including Amazon EKS.
 
@@ -33,7 +33,7 @@ aws --version
 rm -rf aws awscliv2.zip
 ```
 
-### 3.3 Install kubectl
+### Install kubectl
 
 `kubectl` is the command-line tool for interacting with Kubernetes clusters.
 
@@ -49,7 +49,7 @@ rm kubectl
 kubectl version --client
 ```
 
-### 3.4 Install eksctl
+###  Install eksctl
 
 `eksctl` is a command-line tool for creating and managing Amazon EKS clusters.
 
@@ -70,7 +70,7 @@ rm -f "eksctl_${PLATFORM}.tar.gz" /tmp/eksctl
 eksctl version
 ```
 
-### 3.5 Install Helm
+### Install Helm
 
 Helm is a package manager for Kubernetes that simplifies application deployment and management using Helm charts.
 
@@ -87,7 +87,7 @@ helm version
 rm get_helm.sh
 ```
 
-### 3.6 Configure AWS CLI
+### Configure AWS CLI
 
 After installing AWS CLI, configure your AWS credentials.
 
@@ -100,13 +100,11 @@ Enter your AWS details:
 ```text
 AWS Access Key ID: <YOUR_AWS_ACCESS_KEY>
 AWS Secret Access Key: <YOUR_AWS_SECRET_KEY>
-Default region name: ap-south-1
-Default output format: json
+Default region name: <YOUR_AWS_REGION>
+Default output format: <json_or_text_or_table_or_yaml>
 ```
 
-**Security:** Never upload AWS access keys or secret keys to GitHub. Use IAM roles or AWS IAM Identity Center where possible.
-
-### 3.7 Verify Installation and AWS Account
+###  Verify Installation and AWS Account
 
 Verify all installed tools:
 
@@ -129,7 +127,7 @@ Verify AWS account and identity:
 aws sts get-caller-identity
 ```
 
-### 3.8 Connect kubectl to EKS Cluster
+### Connect kubectl to EKS Cluster
 
 After creating your EKS cluster, configure kubectl:
 
