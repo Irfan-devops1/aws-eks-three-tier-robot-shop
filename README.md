@@ -1,8 +1,12 @@
-# Three Tier Architecture Deployment on AWS EKS
+## 📌 Project Overview
 
-Stan's Robot Shop is a sample microservice application you can use as a sandbox to test and learn containerised application orchestration and monitoring techniques. It is not intended to be a comprehensive reference example of how to write a microservices application, although you will better understand some of those concepts by playing with Stan's Robot Shop. To be clear, the error handling is patchy and there is not any security built into the application.
+This project demonstrates the deployment of **Stan's Robot Shop**, a sample microservices-based e-commerce application, on **Amazon Elastic Kubernetes Service (Amazon EKS)**.
 
-You can get more detailed information from my [blog post](https://www.instana.com/blog/stans-robot-shop-sample-microservice-application/) about this sample microservice application.
+The application is containerized with Docker and orchestrated using Kubernetes. Helm is used to package and deploy the application components. AWS integration includes EKS cluster identity and IAM configuration, the AWS Load Balancer Controller, and optional EBS CSI support for persistent storage.
+
+The repository also contains Kubernetes manifests and supporting deployment documentation for experimenting with cloud-native application operations.
+
+> **Project scope:** This is a hands-on DevOps learning and portfolio project. The upstream Robot Shop application is a sample application, not a production-ready commerce platform. Review and harden application security, secrets, availability, storage, and CI/CD before using it in production.
 
 This sample microservice application has been built using these technologies:
 - NodeJS ([Express](http://expressjs.com/))
@@ -31,17 +35,8 @@ This sample microservice application has been built using these technologies:
   <img src="https://img.shields.io/badge/Packaging-Helm-0F1689?logo=helm&logoColor=white" />
 </p>
 
-## 📌 Project Overview
 
-This project demonstrates the deployment of **Stan's Robot Shop**, a sample microservices-based e-commerce application, on **Amazon Elastic Kubernetes Service (Amazon EKS)**.
-
-The application is containerized with Docker and orchestrated using Kubernetes. Helm is used to package and deploy the application components. AWS integration includes EKS cluster identity and IAM configuration, the AWS Load Balancer Controller, and optional EBS CSI support for persistent storage.
-
-The repository also contains Kubernetes manifests and supporting deployment documentation for experimenting with cloud-native application operations.
-
-> **Project scope:** This is a hands-on DevOps learning and portfolio project. The upstream Robot Shop application is a sample application, not a production-ready commerce platform. Review and harden application security, secrets, availability, storage, and CI/CD before using it in production.
-
-## 🏗️ Architecture
+##  Architecture
 
 The application is organized into three logical tiers:
 
@@ -93,7 +88,7 @@ flowchart LR
 4. Backend services communicate with the required databases, cache, and message broker.
 5. Kubernetes manages container scheduling, service discovery, and workload recovery.
 
-## 🧰 Technology Stack
+##  Technology Stack
 
 | Area | Technologies |
 |---|---|
@@ -110,7 +105,7 @@ flowchart LR
 | Data and messaging | MongoDB, MySQL, Redis, RabbitMQ |
 | Automation examples | GitHub Actions workflow files |
 
-## 🧩 Microservices
+##  Microservices
 
 The Robot Shop application consists of the following components:
 
@@ -172,7 +167,7 @@ aws-eks-three-tier-robot-shop/
 - `fluentd/` – Optional logging integration examples.
 - `DCOS/` – DC/OS deployment manifests.
 
-## ⚙️ Prerequisites
+##  Prerequisites
 
 Before deploying, make sure you have:
 
@@ -219,7 +214,7 @@ kubectl get nodes
 kubectl get namespaces
 ```
 
-## 🚀 Deployment Guide
+##  Deployment Guide
 
 > The commands below are a deployment outline. Use the detailed guides in [`EKS/`](EKS/) and adapt cluster creation, node capacity, IAM, networking, and storage settings to your AWS account. EKS and supporting AWS resources can incur charges.
 
@@ -342,7 +337,7 @@ kubectl port-forward -n robot-shop svc/web 8080:8080
 
 Then open `http://localhost:8080`.
 
-## 🔍 Validation and Troubleshooting
+##  Validation and Troubleshooting
 
 Useful commands when validating the deployment:
 
@@ -397,7 +392,7 @@ kubectl get events -A --sort-by=.lastTimestamp
 
 **Important:** Deleting an EKS cluster does not always mean every separately created AWS resource has been removed. Review the AWS Console and billing dashboard after teardown.
 
-## 🧹 Cleanup
+##  Cleanup
 
 If the cluster was created and managed by `eksctl`, the following command can delete the cluster and resources managed as part of that cluster configuration:
 
@@ -411,26 +406,21 @@ This is a destructive operation. Confirm the cluster name and region first, and 
 
 After deletion, review separately managed resources such as IAM roles and policies, load balancers, NAT Gateways, Elastic IP addresses, EBS volumes, and CloudFormation stacks. Delete only resources that belong to this project and are no longer needed.
 
-## 📚 Useful References
+##  Useful References
 
 - [Amazon EKS Documentation](https://docs.aws.amazon.com/eks/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [Helm Documentation](https://helm.sh/docs/)
 - [AWS Load Balancer Controller](https://kubernetes-sigs.github.io/aws-load-balancer-controller/)
 - [Amazon EBS CSI Driver](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html)
-- [Stan's Robot Shop](https://github.com/instana/robot-shop)
 
-## 👨‍💻 Author
+##  Author
+# Irfan Ahmad (DevOps Engineer) 
 
-**Irfan Ahmad**  
-DevOps Engineer
 
+**Project URL:** [aws-eks-three-tier-robot-shop](https://github.com/Irfan-devops1/aws-eks-three-tier-robot-shop)
 - GitHub: [Irfan-devops1](https://github.com/Irfan-devops1)
-- LinkedIn: [Add your LinkedIn profile URL]
-
 ---
 
-⭐ If you find this project useful for learning AWS, Kubernetes, and DevOps practices, feel free to star the repository.
-
-**Disclaimer:** Stan's Robot Shop is a sample application. This repository is intended for learning, demonstration, and portfolio purposes.
+# If you find this project useful for learning AWS, Kubernetes, and DevOps practices, feel free to star the repository.
 
