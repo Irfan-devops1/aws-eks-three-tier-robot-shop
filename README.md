@@ -20,10 +20,10 @@ This sample microservice application has been built using these technologies:
 - Nginx
 - AngularJS (1.x)
   
-## 📸 Project Deployment Screenshots
+##  Project Deployment Screenshots
 
-### 1. Application Registration
-![App Registration](screenshots/App%20registration%20page.png)
+## Robot Shop Application – Live Dashboard and Registration
+![Robot Shop App Live Dashboard](screenshots/Stan’s%20Robot%20Shop%20App%20Live%20Dashboard.png)
 ### 2. Successful Login
 ![Login Successful](screenshots/Login%20successfull.png)
 ### 3. Shopping Cart
