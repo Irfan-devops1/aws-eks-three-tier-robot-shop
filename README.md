@@ -52,34 +52,34 @@ The application is organized into three logical tiers:
 ### High-level AWS and Kubernetes architecture
 
 ```mermaid
-flowchart TB
-    U["User / Web Browser"] --> DNS["Application DNS / Public Endpoint"]
-    DNS --> LB["AWS Load Balancer"]
-    LB --> WEB["Web Frontend Service<br/>Nginx / Robot Shop UI"]
+flowchart LR
+    U[User] --> DNS[DNS]
+    DNS --> LB[AWS Load Balancer]
+    LB --> WEB[Web Frontend]
 
-    subgraph AWS["AWS Cloud"]
-      subgraph VPC["Amazon VPC"]
-        subgraph EKS["Amazon EKS Cluster"]
-          subgraph NS["Kubernetes Namespace: robot-shop"]
-            WEB --> CART["Cart"]
-            WEB --> CAT["Catalogue"]
-            WEB --> USER["User"]
-            WEB --> PAY["Payment"]
-            WEB --> SHIP["Shipping"]
-            WEB --> RATE["Ratings"]
-            CART --> REDIS[("Redis")]
-            CAT --> MONGO[("MongoDB")]
-            USER --> MYSQL[("MySQL")]
-            PAY --> MQ[("RabbitMQ")]
+    subgraph AWS[AWS Cloud]
+      subgraph VPC[Amazon VPC]
+        subgraph EKS[Amazon EKS]
+          subgraph NS[Robot Shop Namespace]
+            WEB --> CART[Cart]
+            WEB --> CAT[Catalogue]
+            WEB --> USER[User Service]
+            WEB --> PAY[Payment]
+            WEB --> SHIP[Shipping]
+            WEB --> RATE[Ratings]
+            CART --> REDIS[(Redis)]
+            CAT --> MONGO[(MongoDB)]
+            USER --> MYSQL[(MySQL)]
+            PAY --> MQ[(RabbitMQ)]
             SHIP --> MQ
             RATE --> MONGO
-            DISPATCH["Dispatch"] --> MQ
+            DISPATCH[Dispatch] --> MQ
           end
         end
-        ALBC["AWS Load Balancer Controller"] -. "provisions / manages" .-> LB
+        ALBC[AWS Load Balancer Controller] -.-> LB
       end
-      IAM["IAM / EKS Pod Identity or IRSA"] -. "AWS permissions" .-> ALBC
-      EBS["EBS CSI Driver (optional)"] -. "persistent volumes" .-> EKS
+      IAM[IAM / IRSA] -.-> ALBC
+      EBS[EBS CSI Driver] -.-> EKS
     end
 ```
 
